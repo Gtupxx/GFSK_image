@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Users/Gtupxx/Desktop/GFSK/build",
+  "command": "D:\\mingw64\\bin\\g++.exe  @CMakeFiles/GFSK.dir/includes_CXX.rsp -g -o CMakeFiles\\GFSK.dir\\GFSK.cpp.obj -c D:\\Users\\Gtupxx\\Desktop\\GFSK\\GFSK.cpp",
+  "file": "D:/Users/Gtupxx/Desktop/GFSK/GFSK.cpp",
+  "output": "CMakeFiles/GFSK.dir/GFSK.cpp.obj"
+}
+]
