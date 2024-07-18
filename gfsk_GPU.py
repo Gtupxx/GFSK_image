@@ -5,11 +5,13 @@ from skimage import io, img_as_float
 from tkinter import Tk, filedialog
 import torch
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 def select_image():
     """Function to select an image file using a file dialog."""
     root = Tk()
     root.withdraw()  # Hide the root window
-    file_path = filedialog.askopenfilename(filetypes=[("JPEG files", "*.jpg"), ("PNG files", "*.png"), ("All files", "*.*")])
+    file_path = filedialog.askopenfilename(filetypes=[("PNG files", "*.png"), ("JPEG files", "*.jpg"), ("All files", "*.*")])
     root.destroy()
     return file_path
 
@@ -46,50 +48,58 @@ def fft_filter(A, D0_values, filter_type='highpass', D0_low=None, D0_high=None):
     [a, b, c] = A.shape
 
     # Try to use CUDA if available and sufficient memory, otherwise fall back to CPU
-    try:
-        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        A_tensor = torch.tensor(A, dtype=torch.float32, device=device)
-    except RuntimeError as e:
-        print("CUDA memory insufficient, falling back to CPU.")
-        device = torch.device('cpu')
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    if torch.cuda.is_available():
+        try:
+            A_tensor = torch.tensor(A, dtype=torch.float32, device=device)
+        except RuntimeError as e:
+            print(f"CUDA error: {e}. Falling back to CPU.")
+            device = torch.device('cpu')
+            A_tensor = torch.tensor(A, dtype=torch.float32, device=device)
+    else:
         A_tensor = torch.tensor(A, dtype=torch.float32, device=device)
 
     print(f"Using device: {device}")
 
-    # Perform 2D FFT for each color channel with zero-padding using PyTorch
-    F = torch.fft.fftn(A_tensor, s=(2*a, 2*b))
-    F_shifted = torch.fft.fftshift(F, dim=(0, 1))
-
     filtered_images = []
 
     for D0 in D0_values:
-        W = torch.zeros((2*a, 2*b, c), dtype=torch.float32, device=device)
-        u, v = torch.meshgrid(torch.arange(-a, a, device=device), torch.arange(-b, b, device=device))
+        W = torch.zeros((2*a, 2*b), dtype=torch.float32, device=device)
+        u, v = torch.meshgrid(torch.arange(-a, a, device=device), torch.arange(-b, b, device=device), indexing='ij')
         D_square = u**2 + v**2
         if filter_type == 'highpass':
-            W[:, :, :] = 1 - torch.exp(-D_square[:, :, None] / (2 * D0**2))
+            W[:, :] = 1 - torch.exp(-D_square / (2 * D0**2))
         elif filter_type == 'lowpass':
-            W[:, :, :] = torch.exp(-D_square[:, :, None] / (2 * D0**2))
+            W[:, :] = torch.exp(-D_square / (2 * D0**2))
         elif filter_type == 'bandpass':
             if D0_low is None or D0_high is None:
                 print("D0_low and D0_high must be provided for bandpass filter")
                 return None
-            W_low = torch.exp(-D_square[:, :, None] / (2 * D0_low**2))
-            W_high = torch.exp(-D_square[:, :, None] / (2 * D0_high**2))
-            W[:, :, :] = W_high - W_low
+            W_low = torch.exp(-D_square / (2 * D0_low**2))
+            W_high = torch.exp(-D_square / (2 * D0_high**2))
+            W[:, :] = W_high - W_low
 
-        # Apply filter in the frequency domain for each channel
-        G = F_shifted * W
-        G_ifftshift = torch.fft.ifftshift(G, dim=(0, 1))
-        F1 = torch.fft.ifftn(G_ifftshift, dim=(0, 1))
-        F1 = torch.real(F1[:a, :b, :])
+        filtered_image = np.zeros((a, b, c), dtype=np.float32)
 
-        # Clip filtered image values to [0, 1] range
-        F1 = torch.clamp(F1, 0, 1).cpu().numpy()
+        for channel in range(c):
+            A_channel = A_tensor[:, :, channel]
 
-        filtered_images.append((F1, filter_type, D0, D0_low, D0_high))
+            # Perform 2D FFT for the channel with zero-padding using PyTorch
+            F = torch.fft.fftn(A_channel, s=(2*a, 2*b))
+            F_shifted = torch.fft.fftshift(F, dim=(0, 1))
+
+            # Apply filter in the frequency domain for the channel
+            G = F_shifted * W
+            G_ifftshift = torch.fft.ifftshift(G, dim=(0, 1))
+            F1 = torch.fft.ifftn(G_ifftshift, dim=(0, 1))
+            F1 = torch.real(F1[:a, :b])
+
+            # Clip filtered image values to [0, 1] range
+            filtered_image[:, :, channel] = torch.clamp(F1, 0, 1).cpu().numpy()
+
+        filtered_images.append((filtered_image, filter_type, D0, D0_low, D0_high))
         
-        save_image(F1, filter_type, D0, D0_low, D0_high)
+        save_image(filtered_image, filter_type, D0, D0_low, D0_high)
 
     return filtered_images
 
