@@ -68,29 +68,29 @@ include CMakeFiles/GFSK.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GFSK.dir/flags.make
 
-CMakeFiles/GFSK.dir/GFSK.cpp.obj: CMakeFiles/GFSK.dir/flags.make
-CMakeFiles/GFSK.dir/GFSK.cpp.obj: CMakeFiles/GFSK.dir/includes_CXX.rsp
-CMakeFiles/GFSK.dir/GFSK.cpp.obj: D:/Users/Gtupxx/Desktop/GFSK/GFSK.cpp
-CMakeFiles/GFSK.dir/GFSK.cpp.obj: CMakeFiles/GFSK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Users\Gtupxx\Desktop\GFSK\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GFSK.dir/GFSK.cpp.obj"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFSK.dir/GFSK.cpp.obj -MF CMakeFiles\GFSK.dir\GFSK.cpp.obj.d -o CMakeFiles\GFSK.dir\GFSK.cpp.obj -c D:\Users\Gtupxx\Desktop\GFSK\GFSK.cpp
+CMakeFiles/GFSK.dir/main.cpp.obj: CMakeFiles/GFSK.dir/flags.make
+CMakeFiles/GFSK.dir/main.cpp.obj: CMakeFiles/GFSK.dir/includes_CXX.rsp
+CMakeFiles/GFSK.dir/main.cpp.obj: D:/Users/Gtupxx/Desktop/GFSK/main.cpp
+CMakeFiles/GFSK.dir/main.cpp.obj: CMakeFiles/GFSK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Users\Gtupxx\Desktop\GFSK\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/GFSK.dir/main.cpp.obj"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/GFSK.dir/main.cpp.obj -MF CMakeFiles\GFSK.dir\main.cpp.obj.d -o CMakeFiles\GFSK.dir\main.cpp.obj -c D:\Users\Gtupxx\Desktop\GFSK\main.cpp
 
-CMakeFiles/GFSK.dir/GFSK.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GFSK.dir/GFSK.cpp.i"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Gtupxx\Desktop\GFSK\GFSK.cpp > CMakeFiles\GFSK.dir\GFSK.cpp.i
+CMakeFiles/GFSK.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/GFSK.dir/main.cpp.i"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\Gtupxx\Desktop\GFSK\main.cpp > CMakeFiles\GFSK.dir\main.cpp.i
 
-CMakeFiles/GFSK.dir/GFSK.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GFSK.dir/GFSK.cpp.s"
-	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Gtupxx\Desktop\GFSK\GFSK.cpp -o CMakeFiles\GFSK.dir\GFSK.cpp.s
+CMakeFiles/GFSK.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/GFSK.dir/main.cpp.s"
+	D:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\Gtupxx\Desktop\GFSK\main.cpp -o CMakeFiles\GFSK.dir\main.cpp.s
 
 # Object files for target GFSK
 GFSK_OBJECTS = \
-"CMakeFiles/GFSK.dir/GFSK.cpp.obj"
+"CMakeFiles/GFSK.dir/main.cpp.obj"
 
 # External object files for target GFSK
 GFSK_EXTERNAL_OBJECTS =
 
-GFSK.exe: CMakeFiles/GFSK.dir/GFSK.cpp.obj
+GFSK.exe: CMakeFiles/GFSK.dir/main.cpp.obj
 GFSK.exe: CMakeFiles/GFSK.dir/build.make
 GFSK.exe: D:/Python312/libs/python312.lib
 GFSK.exe: D:/vcpkg/installed/x64-windows/debug/lib/fftw3.lib

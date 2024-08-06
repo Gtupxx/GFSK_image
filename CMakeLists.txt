@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.5.0)
 project(GFSK VERSION 0.1.0 LANGUAGES C CXX)
 
 # Add the executable
-# add_executable(GFSK main.cpp)
-add_executable(GFSK GFSK.cpp)
+add_executable(GFSK main.cpp)
+# add_executable(GFSK GFSK.cpp)
 
 # Find and include matplotlibcpp
 find_path(MATPLOTLIB_CPP_INCLUDE_DIRS "matplotlibcpp.h")

@@ -562,7 +562,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[D:/vcpkg/installed/x64-windows][v4
 //Details about finding Protobuf
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[D:/vcpkg/installed/x64-windows/tools/protobuf/protoc.exe][optimized;D:/vcpkg/installed/x64-windows/bin/libprotobuf.dll;debug;D:/vcpkg/installed/x64-windows/debug/bin/libprotobufd.dll][D:/vcpkg/installed/x64-windows/include][v25.1.0()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[D:/Python312/libs/python312.lib][D:/Python312/include][D:/Python312/Lib/site-packages/numpy/_core/include][cfound components: Development NumPy Interpreter Development.Module Development.Embed ][v3.12.4()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[D:/Python312/libs/python312.lib][D:/Python312/include][D:/Python312/Lib/site-packages/numpy/core/include][cfound components: Development NumPy Interpreter Development.Module Development.Embed ][v3.12.4()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[C:/Python312/python.exe][v3.12.4(3)]
 //Details about finding PythonLibs
@@ -626,7 +626,7 @@ _Python3_LIBRARY_DEBUG:INTERNAL=_Python3_LIBRARY_DEBUG-NOTFOUND
 _Python3_LIBRARY_RELEASE:INTERNAL=D:/Python312/libs/python312.lib
 _Python3_NUMPY_SIGNATURE:INTERNAL=fdf7185ebd085d3ea1a8428a706991c0
 //Path to a file.
-_Python3_NumPy_INCLUDE_DIR:INTERNAL=D:/Python312/Lib/site-packages/numpy/_core/include
+_Python3_NumPy_INCLUDE_DIR:INTERNAL=D:/Python312/Lib/site-packages/numpy/core/include
 //Path to a library.
 _Python3_RUNTIME_LIBRARY_RELEASE:INTERNAL=C:/Python312/python312.dll
 //ADVANCED property for variable: protobuf_MODULE_COMPATIBLE

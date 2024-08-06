@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/GFSK.dir/GFSK.cpp.obj"
-  "CMakeFiles/GFSK.dir/GFSK.cpp.obj.d"
+  "CMakeFiles/GFSK.dir/main.cpp.obj"
+  "CMakeFiles/GFSK.dir/main.cpp.obj.d"
   "GFSK.exe"
   "GFSK.exe.manifest"
   "GFSK.pdb"

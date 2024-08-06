@@ -7,7 +7,7 @@
                 "${vcpkgRoot}/x64-windows/include/**",
                 "D:\\vcpkg\\installed\\x64-windows\\include\\**",
                 "D:\\Python312\\include\\**",
-                "D:\\Python312\\Lib\\site-packages\\numpy\\_core\\include\\**"
+                "D:\\Python312\\Lib\\**"//D:\\Python312\\Lib\\site-packages\\numpy\\_core\\include\\**
             ],
             "defines": [
                 "_DEBUG",

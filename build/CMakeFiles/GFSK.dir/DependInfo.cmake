@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/Users/Gtupxx/Desktop/GFSK/GFSK.cpp" "CMakeFiles/GFSK.dir/GFSK.cpp.obj" "gcc" "CMakeFiles/GFSK.dir/GFSK.cpp.obj.d"
+  "D:/Users/Gtupxx/Desktop/GFSK/main.cpp" "CMakeFiles/GFSK.dir/main.cpp.obj" "gcc" "CMakeFiles/GFSK.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

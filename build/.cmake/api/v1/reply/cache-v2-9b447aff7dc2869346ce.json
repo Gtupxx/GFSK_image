@@ -1467,7 +1467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[D:/Python312/libs/python312.lib][D:/Python312/include][D:/Python312/Lib/site-packages/numpy/_core/include][cfound components: Development NumPy Interpreter Development.Module Development.Embed ][v3.12.4()]"
+			"value" : "[D:/Python312/libs/python312.lib][D:/Python312/include][D:/Python312/Lib/site-packages/numpy/core/include][cfound components: Development NumPy Interpreter Development.Module Development.Embed ][v3.12.4()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",
@@ -2235,7 +2235,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Python312/Lib/site-packages/numpy/_core/include"
+			"value" : "D:/Python312/Lib/site-packages/numpy/core/include"
 		},
 		{
 			"name" : "_Python3_RUNTIME_LIBRARY_RELEASE",

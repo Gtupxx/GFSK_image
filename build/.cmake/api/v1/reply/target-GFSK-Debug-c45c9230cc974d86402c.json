@@ -39,7 +39,7 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 6,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
@@ -186,7 +186,7 @@
 				{
 					"backtrace" : 22,
 					"isSystem" : true,
-					"path" : "D:/Python312/Lib/site-packages/numpy/_core/include"
+					"path" : "D:/Python312/Lib/site-packages/numpy/core/include"
 				},
 				{
 					"backtrace" : 8,
@@ -298,7 +298,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "GFSK.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

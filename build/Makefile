@@ -128,29 +128,29 @@ GFSK/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/build
 .PHONY : GFSK/fast
 
-GFSK.obj: GFSK.cpp.obj
-.PHONY : GFSK.obj
+main.obj: main.cpp.obj
+.PHONY : main.obj
 
 # target to build an object file
-GFSK.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/GFSK.cpp.obj
-.PHONY : GFSK.cpp.obj
+main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/main.cpp.obj
+.PHONY : main.cpp.obj
 
-GFSK.i: GFSK.cpp.i
-.PHONY : GFSK.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-GFSK.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/GFSK.cpp.i
-.PHONY : GFSK.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-GFSK.s: GFSK.cpp.s
-.PHONY : GFSK.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-GFSK.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/GFSK.cpp.s
-.PHONY : GFSK.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GFSK.dir\build.make CMakeFiles/GFSK.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -161,9 +161,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... GFSK
-	@echo ... GFSK.obj
-	@echo ... GFSK.i
-	@echo ... GFSK.s
+	@echo ... main.obj
+	@echo ... main.i
+	@echo ... main.s
 .PHONY : help
 
 

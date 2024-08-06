@@ -1,1 +1,1 @@
--isystem "D:/vcpkg/installed/x64-windows/include" -isystem D:/Python312/include -isystem "D:/Python312/Lib/site-packages/numpy/_core/include" -isystem "D:/vcpkg/installed/x64-windows/include/tinyfiledialogs"
+-isystem "D:/vcpkg/installed/x64-windows/include" -isystem D:/Python312/include -isystem "D:/Python312/Lib/site-packages/numpy/core/include" -isystem "D:/vcpkg/installed/x64-windows/include/tinyfiledialogs"
